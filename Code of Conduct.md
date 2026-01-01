@@ -1,3 +1,5 @@
+## 🤳Code of Conduct
+
 1. As this is a security related tool do not intentionally send Malacious Files in the Pull Requests
 2. Do Not spam the Pull Requests.
 3. While creating a Pull Request keep the scope informative
