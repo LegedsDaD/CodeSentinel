@@ -25,7 +25,8 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 
 ## Demo
 <img width="598" height="289" alt="image" src="https://github.com/user-attachments/assets/d4e9a584-480c-4100-b7d3-aeb9c9f5fbe3" />
-<img width="671" height="485" alt="image" src="https://github.com/user-attachments/assets/803e3896-a484-4594-b2bc-6108ebb7d203" />
+<img width="683" height="553" alt="image" src="https://github.com/user-attachments/assets/1766dc29-a36f-4a72-94ea-deaf61d87614" />
+
 
 
 
