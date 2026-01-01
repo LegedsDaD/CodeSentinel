@@ -1,4 +1,5 @@
-## 🔱 CodeSentinel
+#<img width="1024" height="1024" alt="ChatGPT Image Jan 1, 2026, 06_17_28 PM" src="https://github.com/user-attachments/assets/3e35289c-a26a-422f-8afe-48532c69f6ca" />
+# 🔱 CodeSentinel
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
