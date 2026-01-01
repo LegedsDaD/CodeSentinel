@@ -16,15 +16,6 @@
 ![Single File](https://img.shields.io/badge/Architecture-Single%20File-blueviolet)
 ![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-success)
 ![CLI Tool](https://img.shields.io/badge/Interface-CLI-lightgrey)
-![Stars](https://img.shields.io/github/stars/USERNAME/REPO?style=flat)
-![Forks](https://img.shields.io/github/forks/USERNAME/REPO)
-![Issues](https://img.shields.io/github/issues/USERNAME/REPO)
-![Last Commit](https://img.shields.io/github/last-commit/USERNAME/REPO)
-
-
-
-
-
 
 
 
