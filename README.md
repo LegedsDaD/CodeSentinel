@@ -30,6 +30,16 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 
 
 ## Glance Tables
+
+> Platform Compatibility
+
+| Platform | Supported | Notes |
+|--------|-----------|-------|
+| Windows | ✅ Yes | freeze_support enabled |
+| Linux | ✅ Yes | Fully supported |
+| macOS | ✅ Yes | Fully supported |
+| WSL | ⚠️ Partial | Depends on config |
+
 > Feature Comparison
 
 | Capability | Supported | Notes |
@@ -45,6 +55,15 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 | Full-access execution | ⚠️ | Requires manual confirmation |
 | Internet access | ❌ | Fully offline by design |
 
+> AI Heuristic Signals
+
+| Signal | Description | Weight |
+|------|-------------|--------|
+| Long lines | >120 characters | Medium |
+| Dense logic | High complexity | Medium |
+| Repetitive patterns | Copy-like structure | Low |
+| Obfuscation | Unusual formatting | High |
+
 > Security Layer Breakdown
 
 | Layer | Protection Applied | Purpose |
@@ -56,6 +75,17 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 | Timeout | Forced termination | Stop infinite or hanging code |
 | Unsafe Mode | Manual consent | Prevent accidental harm |
 
+> Built ins Availability Table
+
+| Built-in | Restricted Mode | Unsafe Mode |
+|--------|----------------|------------|
+| print | ✅ Allowed | ✅ Allowed |
+| input | ✅ Allowed | ✅ Allowed |
+| open | ❌ Blocked | ✅ Allowed |
+| exec | ❌ Blocked | ✅ Allowed |
+| eval | ❌ Blocked | ✅ Allowed |
+| __import__ | 🔒 Restricted | ✅ Full |
+
 > Risk Severity mapping
 
 | Severity Score | Level | Meaning |
@@ -64,6 +94,26 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 | 3–4 | 🟡 MEDIUM | Potentially unsafe |
 | 5–7 | 🟠 HIGH | Dangerous patterns detected |
 | 8–10 | 🔴 CRITICAL | Immediate system risk |
+
+> Detected Issue Types
+
+| Issue Type | Example | Severity |
+|----------|--------|----------|
+| Dangerous module | import os | 🔴 High |
+| Unsafe built-in | eval("code") | 🔴 High |
+| System call | os.system("cmd") | 🔴 Critical |
+| File deletion | os.remove("x") | 🔴 Critical |
+| Long lines | >120 chars | 🟡 Medium |
+
+> Execution Outcome Matrix.
+
+| Scenario | Restricted Mode Result | Unsafe Mode Result |
+|--------|------------------------|-------------------|
+| Safe code | ✅ Executes normally | ✅ Executes normally |
+| File deletion attempt | ❌ Blocked | ⚠️ Allowed |
+| Dangerous import | ❌ Blocked | ⚠️ Allowed |
+| Infinite loop | ❌ Terminated | ❌ May hang system |
+| Network access | ❌ Blocked | ⚠️ Allowed |
 
 > CLI Command Reference
 
@@ -114,6 +164,43 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 | 🔧 Submit PRs | Grows the project |
 | 📢 Share | Helps safe coding |
 
+
+## 🧠 High level Architecture Diagram.
+
++----------------------+
+|   Untrusted Python   |
+|        Code          |
++----------+-----------+
+           |
+           v
++----------------------+
+|  AST Security Scan   |
+|  (Static Analysis)   |
++----------+-----------+
+           |
+           v
++----------------------+
+|   Risk Scoring       |
+|   (0 – 10)           |
++----------+-----------+
+           |
+           v
++----------------------+
+| AI Heuristic Engine  |
+| (Offline Estimation) |
++----------+-----------+
+           |
+           v
++----------------------+
+| Restricted Sandbox   |
+| (Isolated Process)   |
++----------+-----------+
+           |
+           v
++----------------------+
+|  Manual Unsafe Mode  |
+| (Explicit Consent)   |
++----------------------+
 
 ## 🚀 Features
 > 🔍 Static Security Analysis
