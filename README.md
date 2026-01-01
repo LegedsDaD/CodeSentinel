@@ -24,10 +24,10 @@ CodeSentinel is a single-file, production-ready secure Python code analyzer and 
 It performs static AST analysis, assigns a risk score, applies heuristic AI probability checks, and runs code inside a time-limited, restricted sandbox before allowing optional full-access execution.
 
 ## Demo
-👀 QUICK LOOK ⬇️
 <img width="598" height="289" alt="image" src="https://github.com/user-attachments/assets/d4e9a584-480c-4100-b7d3-aeb9c9f5fbe3" />
+<img width="671" height="485" alt="image" src="https://github.com/user-attachments/assets/803e3896-a484-4594-b2bc-6108ebb7d203" />
 
-<img width="671" height="485" alt="image" src="https://github.com/user-attachments/assets/230e4c89-dce5-4c2d-884a-84db0486552e" />
+
 
 
 
