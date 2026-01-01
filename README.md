@@ -1,5 +1,4 @@
-#<img width="1024" height="1024" alt="ChatGPT Image Jan 1, 2026, 06_17_28 PM" src="https://github.com/user-attachments/assets/3e35289c-a26a-422f-8afe-48532c69f6ca" />
-# 🔱 CodeSentinel
+<img width="1024" height="1024" alt="ChatGPT Image Jan 1, 2026, 06_17_28 PM" src="https://github.com/user-attachments/assets/3e35289c-a26a-422f-8afe-48532c69f6ca" />
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
@@ -18,7 +17,7 @@
 ![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-success)
 ![CLI Tool](https://img.shields.io/badge/Interface-CLI-lightgrey)
 
-
+## 🔱 CodeSentinel
 
 CodeSentinel is a single-file, production-ready secure Python code analyzer and sandbox executor designed to safely inspect and execute untrusted or AI-generated Python code without risking system integrity.
 
