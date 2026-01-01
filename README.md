@@ -85,7 +85,7 @@ Compatible with Windows executables and frozen builds
 
 No dependencies required.
 
-git clone https://github.com/yourusername/codesentinel.git
+git clone https://github.com/LegedsDaD/codesentinel.git
 cd codesentinel
 
 
