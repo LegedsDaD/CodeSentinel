@@ -164,44 +164,6 @@ It performs static AST analysis, assigns a risk score, applies heuristic AI prob
 | 🔧 Submit PRs | Grows the project |
 | 📢 Share | Helps safe coding |
 
-
-## 🧠 High level Architecture Diagram.
-
-+----------------------+
-|   Untrusted Python   |
-|        Code          |
-+----------+-----------+
-           |
-           v
-+----------------------+
-|  AST Security Scan   |
-|  (Static Analysis)   |
-+----------+-----------+
-           |
-           v
-+----------------------+
-|   Risk Scoring       |
-|   (0 – 10)           |
-+----------+-----------+
-           |
-           v
-+----------------------+
-| AI Heuristic Engine  |
-| (Offline Estimation) |
-+----------+-----------+
-           |
-           v
-+----------------------+
-| Restricted Sandbox   |
-| (Isolated Process)   |
-+----------+-----------+
-           |
-           v
-+----------------------+
-|  Manual Unsafe Mode  |
-| (Explicit Consent)   |
-+----------------------+
-
 ## 🚀 Features
 > 🔍 Static Security Analysis
 
