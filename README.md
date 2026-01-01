@@ -84,7 +84,7 @@ Python 3.8+ is required.
 
 🛠 Usage
 🔎 Scan a Python file (no execution)
-python codesentinel.py scan example.py
+>python codesentinel.py scan example.py
 
 
 Output includes:
@@ -100,7 +100,7 @@ Risk score
 AI probability estimate
 
 ▶️ Run code safely (restricted sandbox)
-python codesentinel.py run example.py
+>python codesentinel.py run example.py
 
 
 By default:
@@ -143,24 +143,7 @@ Unsafe Mode	Manual confirmation
 No Python sandbox is perfectly secure. CodeSentinel is designed for risk reduction, not absolute isolation.
 
 🧩 Architecture Overview
-┌──────────────┐
-│ Python File  │
-└──────┬───────┘
-       ↓
-┌─────────────────┐
-│ AST Analyzer     │
-│ (Risk Scoring)   │
-└──────┬──────────┘
-       ↓
-┌─────────────────┐
-│ Restricted       │
-│ Sandbox Process  │
-└──────┬──────────┘
-       ↓
-┌─────────────────┐
-│ Optional Unsafe  │
-│ Full Execution   │
-└─────────────────┘
+
 
 🧠 Use Cases
 
