@@ -23,13 +23,96 @@ CodeSentinel is a single-file, production-ready secure Python code analyzer and 
 
 It performs static AST analysis, assigns a risk score, applies heuristic AI probability checks, and runs code inside a time-limited, restricted sandbox before allowing optional full-access execution.
 
-## Demo
+## 👀Demo
 <img width="598" height="289" alt="image" src="https://github.com/user-attachments/assets/d4e9a584-480c-4100-b7d3-aeb9c9f5fbe3" />
 <img width="683" height="553" alt="image" src="https://github.com/user-attachments/assets/1766dc29-a36f-4a72-94ea-deaf61d87614" />
 
 
 
+## Glance Tables
+> Feature Comparison
 
+| Capability | Supported | Notes |
+|-----------|----------|-------|
+| AST-based static analysis | ✅ | No code execution required |
+| Dangerous import detection | ✅ | os, subprocess, socket, etc. |
+| Unsafe built-in detection | ✅ | eval, exec, compile, open |
+| Attribute call detection | ✅ | os.system, os.remove, etc. |
+| Risk scoring (0–10) | ✅ | Severity-weighted |
+| AI heuristic probability | ✅ | Offline, no APIs |
+| Restricted sandbox execution | ✅ | Isolated process |
+| Execution timeout | ✅ | Prevents infinite loops |
+| Full-access execution | ⚠️ | Requires manual confirmation |
+| Internet access | ❌ | Fully offline by design |
+
+> Security Layer Breakdown
+
+| Layer | Protection Applied | Purpose |
+|------|------------------|--------|
+| Static Analysis | AST inspection | Detect risky code early |
+| Runtime Isolation | Separate process | Prevent host contamination |
+| Built-ins | Whitelisted only | Block file/system access |
+| Imports | Policy-based blocking | Disable dangerous modules |
+| Timeout | Forced termination | Stop infinite or hanging code |
+| Unsafe Mode | Manual consent | Prevent accidental harm |
+
+> Risk Severity mapping
+
+| Severity Score | Level | Meaning |
+|---------------|-------|--------|
+| 0–2 | 🟢 LOW | Minimal or no risk |
+| 3–4 | 🟡 MEDIUM | Potentially unsafe |
+| 5–7 | 🟠 HIGH | Dangerous patterns detected |
+| 8–10 | 🔴 CRITICAL | Immediate system risk |
+
+> CLI Command Reference
+
+| Command | Description | Executes Code |
+|-------|-------------|---------------|
+| scan <file.py> | Analyze code only | ❌ No |
+| run <file.py> | Run in restricted sandbox | ✅ Yes (safe) |
+| Unsafe override | Full access execution | ⚠️ Yes (dangerous) |
+
+> Sandbox mode Comparison
+
+| Feature | Restricted Mode | Unsafe Mode |
+|-------|----------------|------------|
+| Filesystem access | ❌ Blocked | ✅ Allowed |
+| Dangerous imports | ❌ Blocked | ✅ Allowed |
+| Built-ins | Whitelisted | Full Python |
+| Timeout enforced | ✅ Yes | ❌ No |
+| User confirmation | ❌ No | ✅ Required |
+| System risk | 🟢 Low | 🔴 High |
+> Ideal user profiles.
+
+| User | How CodeSentinel Helps |
+|----|-----------------------|
+| AI Developers | Inspect AI-generated scripts |
+| Security Researchers | Test unsafe code safely |
+| Students | Learn Python security |
+| Educators | Demonstrate sandboxing |
+| Offline Users | Secure execution without internet |
+
+> Roadmap Status
+
+| Feature | Status |
+|------|--------|
+| Core analyzer | ✅ Complete |
+| Restricted sandbox | ✅ Complete |
+| Risk scoring | ✅ Complete |
+| JSON report export | ⏳ Planned |
+| Custom policies | ⏳ Planned |
+| GUI interface | ⏳ Planned |
+| PyPI package | ⏳ Planned |
+
+> Community Engagement
+
+| Action | Impact |
+|-----|-------|
+| ⭐ Star the repo | Helps visibility |
+| 🐛 Report issues | Improves security |
+| 🔧 Submit PRs | Grows the project |
+| 📢 Share | Helps safe coding |
 
 
 ## 🚀 Features
@@ -39,47 +122,35 @@ AST-based inspection (no execution required)
 
 Detects:
 
-Dangerous module imports (os, subprocess, socket, etc.)
-
-Unsafe built-ins (eval, exec, compile, open)
-
-High-risk attribute calls (os.system, os.remove, etc.)
-
-Line-accurate reporting with code snippets
+1)Dangerous module imports (os, subprocess, socket, etc.)
+2)Unsafe built-ins (eval, exec, compile, open)
+3)High-risk attribute calls (os.system, os.remove, etc.)
+4)Line-accurate reporting with code snippets
 
 > 🧮 Risk Scoring System
 
-Severity-weighted scoring model
-
-Normalized 0–10 risk score
-
-Automatically flags high-risk files
+1)Severity-weighted scoring model
+2)Normalized 0–10 risk score
+3.Automatically flags high-risk files
 
 > 🤖 AI Heuristic Probability
 
-Lightweight heuristic to estimate AI-generated code likelihood
-
-Zero external APIs
-
-Fully offline and deterministic
+1)Lightweight heuristic to estimate AI-generated code likelihood
+2)Zero external APIs
+3)Fully offline and deterministic
 
 > 🧪 Secure Sandbox Execution
 
-Runs code in a separate process
-
-Enforced execution timeout
-
-Restricted built-ins and blocked filesystem access
-
-Dangerous imports disabled at runtime
-
-Optional manual override for unrestricted execution
+1)Runs code in a separate process
+2)Enforced execution timeout
+3)Restricted built-ins and blocked filesystem access
+4)Dangerous imports disabled at runtime
+5)Optional manual override for unrestricted execution
 
 > 🪟 Windows-Safe by Design
 
-Uses multiprocessing.freeze_support()
-
-Compatible with Windows executables and frozen builds
+1)Uses multiprocessing.freeze_support()
+2)Compatible with Windows executables and frozen builds
 
 ## 📦 Installation
 
@@ -91,22 +162,17 @@ cd codesentinel
 
 Python 3.8+ is required.
 
-## 🛠 Usage
 ## 🔎 Scan a Python file (no execution)
 >python codesentinel.py scan example.py
 
 
 Output includes:
 
-Detected issues
-
-Severity levels
-
-Line numbers and code snippets
-
-Risk score
-
-AI probability estimate
+>Detected issues
+>Severity levels
+>Line numbers and code snippets
+>Risk score
+>AI probability estimate
 
  ## ▶️ Run code safely (restricted sandbox)
 >python codesentinel.py run example.py
@@ -114,11 +180,9 @@ AI probability estimate
 
 By default:
 
-Filesystem access is blocked
-
-Dangerous modules are disabled
-
-Execution is time-limited
+>Filesystem access is blocked
+>Dangerous modules are disabled
+>Execution is time-limited
 
 🚨 Run with full system access (dangerous)
 
@@ -140,13 +204,13 @@ This prevents accidental execution of malicious code.
 🤖 AI-generated probability: 0%
 
 ## 🔐 Security Model
-Layer	Protection
-Static Analysis	AST inspection
-Runtime Sandbox	Isolated process
-Built-ins	Whitelisted only
-Imports	Blocked by policy
-Timeout	Forced termination
-Unsafe Mode	Manual confirmation
+>Layer	Protection
+>Static Analysis	AST inspection
+>Runtime Sandbox	Isolated process
+>Built-ins	Whitelisted only
+>Imports	Blocked by policy
+>Timeout	Forced termination
+>Unsafe Mode	Manual confirmation
 
 ## ⚠️ Important:
 No Python sandbox is perfectly secure. CodeSentinel is designed for risk reduction, not absolute isolation.
@@ -154,35 +218,30 @@ No Python sandbox is perfectly secure. CodeSentinel is designed for risk reducti
 
 ## 🧠 Use Cases
 
-Reviewing AI-generated Python code
-
-Executing code from untrusted sources
-
-Teaching Python security concepts
-
-Secure local code testing
-
-Building higher-level AI agents or coding tools
+1)Reviewing AI-generated Python code
+2)Executing code from untrusted sources
+3)Teaching Python security concepts
+4)Secure local code testing
+5)Building higher-level AI agents or coding tools
 
 ## 📄 License
 
 MIT License
 You are free to use, modify, and distribute this software.
 
-## ⭐ Future Enhancements (Planned)
+## ⏭ Future Enhancements (Planned)
 
-JSON / SARIF report export
+1.JSON / SARIF report export
+2.Custom security policies
+3.Memory & CPU usage limits
+4.Plugin-based analyzers
+5.GUI and editor integrations
 
-Custom security policies
+## ⭐ Star
 
-Memory & CPU usage limits
-
-Plugin-based analyzers
-
-GUI and editor integrations
+If you find CodeSentinel useful don't forget to leave a star behind. Thank You
 
 ## 👤 Author
 
 LegedsDaD
-
 Independent Developer
