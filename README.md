@@ -1,4 +1,4 @@
-🔱 CodeSentinel
+## 🔱 CodeSentinel
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
@@ -23,8 +23,8 @@ CodeSentinel is a single-file, production-ready secure Python code analyzer and 
 
 It performs static AST analysis, assigns a risk score, applies heuristic AI probability checks, and runs code inside a time-limited, restricted sandbox before allowing optional full-access execution.
 
-🚀 Features
-🔍 Static Security Analysis
+## 🚀 Features
+> 🔍 Static Security Analysis
 
 AST-based inspection (no execution required)
 
@@ -38,7 +38,7 @@ High-risk attribute calls (os.system, os.remove, etc.)
 
 Line-accurate reporting with code snippets
 
-🧮 Risk Scoring System
+> 🧮 Risk Scoring System
 
 Severity-weighted scoring model
 
@@ -46,7 +46,7 @@ Normalized 0–10 risk score
 
 Automatically flags high-risk files
 
-🤖 AI Heuristic Probability
+> 🤖 AI Heuristic Probability
 
 Lightweight heuristic to estimate AI-generated code likelihood
 
@@ -54,7 +54,7 @@ Zero external APIs
 
 Fully offline and deterministic
 
-🧪 Secure Sandbox Execution
+> 🧪 Secure Sandbox Execution
 
 Runs code in a separate process
 
@@ -66,13 +66,13 @@ Dangerous imports disabled at runtime
 
 Optional manual override for unrestricted execution
 
-🪟 Windows-Safe by Design
+> 🪟 Windows-Safe by Design
 
 Uses multiprocessing.freeze_support()
 
 Compatible with Windows executables and frozen builds
 
-📦 Installation
+## 📦 Installation
 
 No dependencies required.
 
@@ -82,8 +82,8 @@ cd codesentinel
 
 Python 3.8+ is required.
 
-🛠 Usage
-🔎 Scan a Python file (no execution)
+## 🛠 Usage
+## 🔎 Scan a Python file (no execution)
 >python codesentinel.py scan example.py
 
 
@@ -99,7 +99,7 @@ Risk score
 
 AI probability estimate
 
-▶️ Run code safely (restricted sandbox)
+ ## ▶️ Run code safely (restricted sandbox)
 >python codesentinel.py run example.py
 
 
@@ -130,7 +130,7 @@ This prevents accidental execution of malicious code.
 🧮 Risk Score: 3/10
 🤖 AI-generated probability: 0%
 
-🔐 Security Model
+## 🔐 Security Model
 Layer	Protection
 Static Analysis	AST inspection
 Runtime Sandbox	Isolated process
@@ -139,13 +139,11 @@ Imports	Blocked by policy
 Timeout	Forced termination
 Unsafe Mode	Manual confirmation
 
-⚠️ Important:
+## ⚠️ Important:
 No Python sandbox is perfectly secure. CodeSentinel is designed for risk reduction, not absolute isolation.
 
-🧩 Architecture Overview
 
-
-🧠 Use Cases
+## 🧠 Use Cases
 
 Reviewing AI-generated Python code
 
@@ -157,12 +155,12 @@ Secure local code testing
 
 Building higher-level AI agents or coding tools
 
-📄 License
+## 📄 License
 
 MIT License
 You are free to use, modify, and distribute this software.
 
-⭐ Future Enhancements (Planned)
+## ⭐ Future Enhancements (Planned)
 
 JSON / SARIF report export
 
@@ -174,7 +172,8 @@ Plugin-based analyzers
 
 GUI and editor integrations
 
-👤 Author
+## 👤 Author
 
 LegedsDaD
+
 Independent Developer
